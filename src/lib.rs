@@ -30,7 +30,6 @@ pub fn run(config: Config) -> Result<(), Box<dyn Error>> {
      */
     let contents = fs::read_to_string(config.file_path)?;
 
-    println!("{}", config.ignore_case);
     let result = if config.ignore_case {
         search_case_insensitive(&config.query, &contents)
     } else {
